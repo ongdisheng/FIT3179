@@ -1,0 +1,9 @@
+"m49_code","country","region","cpc_code","commodity","year","loss_percentage","loss_percentage_original","loss_quantity","activity","food_supply_stage","treatment","cause_of_loss","sample_size","method_data_collection","reference","url","notes"
+"246","Finland",,"02211","Raw milk of cattle",2010,17,"17%",,"Consumption","Households",,,,"Survey","Venice 2012, Fourth International Symposium on Energy from Biomass and Waste",,
+"246","Finland",,"02211","Raw milk of cattle",2010,4,"4%",,"Consumption","Households",,,,"Survey","Venice 2012, Fourth International Symposium on Energy from Biomass and Waste",,
+"246","Finland",,"0231","Hen eggs in shell, fresh",2010,7,"7%",,"Consumption","Households",,,,"Survey","Venice 2012, Fourth International Symposium on Energy from Biomass and Waste",,
+"246","Finland",,"21111.01","Meat of cattle with the bone, fresh or chilled",2010,7,"7%",,"Consumption","Households",,,,"Survey","Venice 2012, Fourth International Symposium on Energy from Biomass and Waste",,
+"246","Finland",,"21111.01","Meat of cattle with the bone, fresh or chilled",2010,9,"9%",,"Consumption","Food Services",,,,"Survey","Venice 2012, Fourth International Symposium on Energy from Biomass and Waste",,
+"246","Finland",,"22251.01","Cheese from whole cow milk",2010,3,"3%",,"Consumption","Food Services",,,,"Survey","Venice 2012, Fourth International Symposium on Energy from Biomass and Waste",,
+"246","Finland",,"22290","Dairy products n.e.c.",2010,3,"3%",,"Consumption","Food Services",,,,"Survey","Venice 2012, Fourth International Symposium on Energy from Biomass and Waste",,
+"840","United States of America",,"0231","Hen eggs in shell, fresh",2010,1.5,"1.5",,,"Whole supply chain",,,,"National Accounts",,"https://www.ers.usda.gov/data-products/food-availability-per-capita-data-system/",

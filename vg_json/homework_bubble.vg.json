@@ -17,12 +17,38 @@
           "step": 1000000,
           "name": "Minimum Population: "
         }
+      },
+      {
+        "name": "Continent_selection",
+        "bind": {
+          "input": "select",
+          "options": [
+            null,
+            "North America",
+            "South America",
+            "Europe",
+            "Africa",
+            "Asia",
+            "Oceania"
+          ],
+          "labels":[
+            "Show All",
+            "North America",
+            "South America",
+            "Europe",
+            "Africa",
+            "Asia",
+            "Oceania"
+          ],
+          "name": "Continent Selection: "
+        }
       }
     ],
     "transform": [
       {"filter": "datum.gdp_per_capita > 0"},
       {"filter": "datum.child_mortality_rate > 0"},
-      {"filter": "datum.population > Population_Above"}
+      {"filter": "datum.population > Population_Above"},
+      {"filter": "Continent_selection == null || datum.continent == Continent_selection"}
     ],
     "encoding": {
       "x": {
@@ -42,14 +68,14 @@
     },
     "layer": [
       {
-        "mark": "circle",
-        "params": [
-          {
-            "name": "continent_highlight",
-            "select": {"type": "point", "fields": ["continent"]},
+        "selection": {
+          "continent_highlight": {
+            "type": "multi",
+            "fields": ["continent"],
             "bind": "legend"
           }
-        ],
+        },
+        "mark": "circle",
         "encoding": {
           "size": {
             "field": "population",
@@ -90,8 +116,8 @@
             }
           },
           "opacity": {
-            "condition": {"param": "continent_highlight", "value": 0.6},
-            "value": 0
+            "condition": {"selection": "continent_highlight", "value": 0.6},
+            "value": 0.2
           },
           "tooltip": [
             {"field": "country", "type": "nominal", "title": "Country"},

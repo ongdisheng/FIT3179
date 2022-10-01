@@ -1,0 +1,17 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A vertical box plot showing median and lower and upper quartiles of the distribution of body mass of penguins.",
+    "data": {"url": "https://raw.githubusercontent.com/ongdisheng/FIT3179/main/project2/data/boxplot.csv"},
+    "mark": "boxplot",
+    "encoding": {
+        "x": {
+            "field": "mortality_rate",
+            "type": "quantitative",
+            "axis": {"tickCount": 2},
+            "scale": {"zero": false, "type": "log", "domain": [0.15, 15]},
+            "title": "Child mortality rate"
+          },
+          "y": {"field": "continent", "type": "nominal", "title": "Continent"},
+          "color": {"field": "continent", "type": "nominal", "legend": null}
+    }
+  }

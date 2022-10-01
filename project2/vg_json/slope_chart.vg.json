@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {"url": "https://raw.githubusercontent.com/ongdisheng/FIT3179/main/project2/data/slope_chart.csv"},
+    "mark": "line",
+    "width": {"step": 50},
+    "encoding": {
+      "x": {
+        "field": "year",
+        "type": "ordinal",
+        "scale": {"padding": 0.5},
+        "title": "Year"
+      },
+      "y": {
+        "field": "deaths",
+        "type": "quantitative",
+        "title": "Average child deaths"
+      },
+      "color": {
+        "field": "life_stage", "type": "nominal",
+        "legend": {
+            "title": "Life stage"
+        }
+    }
+    }
+  }

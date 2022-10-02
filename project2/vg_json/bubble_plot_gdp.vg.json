@@ -4,7 +4,7 @@
   "height": 600,
   "title": "Child mortality rate vs GDP per capita",
   "data": {
-    "url": "https://raw.githubusercontent.com/ongdisheng/FIT3179/main/project2/data/bubble_plot.csv"
+    "url": "https://raw.githubusercontent.com/ongdisheng/FIT3179/main/project2/data/bubble_plot_gdp.csv"
   },
   "params": [
     {

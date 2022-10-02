@@ -4,7 +4,7 @@
     "height": 400,
     "title": "Rank of global child deaths by cause",
     "data": {
-        "url": "https://raw.githubusercontent.com/ongdisheng/FIT3179/main/project2/data/bump_chart_cause.csv"
+        "url": "https://raw.githubusercontent.com/ongdisheng/FIT3179/main/project2/data/bump_chart.csv"
     },
     "params": [
         {

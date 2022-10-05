@@ -32,7 +32,7 @@
   
   body {
     font-size: large;
-    font-family: 'Inter', sans-serif !important;
+    font-family: 'Source Sans Pro', sans-serif !important;
     background-color: #ffffff;
   }
   
@@ -61,4 +61,17 @@
     font-size: xx-large;
     text-shadow: 2px 2px 2px rgb(255, 255, 255),
     2px 2px 1px rgb(255, 255, 255); 
+  }
+
+  .title {
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+  }
+
+  #vis1 {
+    top: 0px;
+  }
+
+  #viz2 {
+    top: 0px;
   }

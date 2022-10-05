@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": "container",
     "height": 600,
-    "title": "Child mortality rate vs GDP per capita (2016)",
+    "title": "",
     "data": {
       "url": "https://raw.githubusercontent.com/ongdisheng/FIT3179/main/week10/data/bubble_plot.csv"
     },

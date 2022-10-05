@@ -73,6 +73,9 @@
           ]
         }
       }
-    ]
+    ],
+    "config": {
+      "background": "#FCF6F5FF"
+    }
     
   }

@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 800,
+    "width": "container",
     "height": 600,
     "title": "Child mortality rate vs GDP per capita (2016)",
     "data": {
@@ -121,9 +121,11 @@
           },
           "tooltip": [
             {"field": "country", "type": "nominal", "title": "Country"},
+            {"field": "continent", "type": "nominal", "title": "Continent"},
+            {"field": "population", "type": "quantitative", "title": "Population"},
             {"field": "gdp_per_capita", "type": "quantitative", "format": "$,", "title": "GDP Per Capita"},
-            {"field": "child_mortality", "type": "quantitative", "format": ",", "title": "Number Of Child Deaths"},
-            {"field": "child_mortality_rate", "type": "quantitative", "format": ".2f", "title": "Child Mortality Rate"}
+            {"field": "child_mortality", "type": "quantitative", "format": ",", "title": "Child Mortality"},
+            {"field": "child_mortality_rate", "type": "quantitative", "format": ".2f", "title": "Child Mortality Rate Per 1,000 Live Births"}
           ]
         }
       },
@@ -148,11 +150,31 @@
           },
           "tooltip": [
             {"field": "country", "type": "nominal", "title": "Country"},
+            {"field": "continent", "type": "nominal", "title": "Continent"},
+            {"field": "population", "type": "quantitative", "title": "Population"},
             {"field": "gdp_per_capita", "type": "quantitative", "format": "$,", "title": "GDP Per Capita"},
-            {"field": "child_mortality", "type": "quantitative", "format": ",", "title": "Number Of Child Deaths"},
-            {"field": "child_mortality_rate", "type": "quantitative", "format": ".2f", "title": "Child Mortality Rate"}
+            {"field": "child_mortality", "type": "quantitative", "format": ",", "title": "Child Mortality"},
+            {"field": "child_mortality_rate", "type": "quantitative", "format": ".2f", "title": "Child Mortality Rate Per 1,000 Live Births"}
           ]
         }
+      },
+      {
+        "transform": [
+          {"filter": "datum.country == 'Finland'"},
+          {
+            "calculate": "'Most European countries have lb high economic production and lb low child mortality rate'",
+            "as": "text_annotation"
+          }
+        ],
+        "mark": {"type": "text", "fontWeight": "bold", "dx": -180, "dy": -30},
+        "encoding": {
+          "text": {"field": "text_annotation"},
+          "color": {"value": "grey"},
+          "size": {"value": 14}
+        }
       }
-    ]
+    ],
+    "config": {
+      "lineBreak": "lb"
+    }
   }

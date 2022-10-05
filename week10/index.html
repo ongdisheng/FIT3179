@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Source+Sans+Pro:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- jquery -->
+    <script src="json/jquery-3.6.0.min.js"></script>
+    <!-- Vegalite -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <title>Child and Infant Mortality</title>
+  </head>
+  <body class="vsc-initialized">
+    <!-- Header (Title) -->
+    <div class="section p-3">
+      <div class="container">
+        <div class="row bg2">
+          <div class="col-12 d-flex justify-content-center">
+            <div class="h1 align-middle p-3" id="headline">
+              Child and Infant Mortality
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- Choropleth Map Section -->
+    <div class="section p-3">
+      <div class="container">
+        <div class="row bg1">
+          <div class="col-12">
+            <div class="span p-4">
+
+            </div>
+          </div>
+          <div class="col-12 d-flex justify-content-center">
+            <div id="vis1" class="p-3 w-100"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bar chart section (Top 10 saddest and happiest countries) -->
+    <div class="section p-3">
+        <div class="container">
+          <div class="row bg2">
+            <div class="col-12 mt-3 mx-3">
+              <div class="h1 fw-bold"></div>
+            </div>
+            <div class="col-12 m-3">
+
+            </div>
+            <div class="col-12 d-flex justify-content-center">
+              <div id="vis2" class="w-100 p-3"></div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Change slelect -->
+    <script type="text/javascript">
+      console.log("hi");
+      $("select").each(function () {
+        console.log($this);
+        $(this).addClass("form-select");
+      });
+    </script>
+    <!-- Vegalite Embeds -->
+    <script type="text/javascript">
+      var vis1 = "vg_json/homework_map.vg.json";
+      vegaEmbed("#vis1", vis1)
+        .then(function (result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        })
+        .catch(console.error);
+
+      var vis2a = "vg_json/homework_bubble.vg.json";
+      vegaEmbed("#vis2", vis2a)
+        .then(function (result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        })
+        .catch(console.error);
+
+    </script>
+
+    <!-- Custom scripts -->
+    <script type="text/javascript" src="json/scripts.js"></script>
+
+    <!-- Bootstrap (Popper) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

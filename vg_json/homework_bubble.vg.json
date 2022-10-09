@@ -122,7 +122,7 @@
           "tooltip": [
             {"field": "country", "type": "nominal", "title": "Country"},
             {"field": "continent", "type": "nominal", "title": "Continent"},
-            {"field": "population", "type": "quantitative", "title": "Population"},
+            {"field": "population", "type": "quantitative", "title": "Population", "format": ","},
             {"field": "gdp_per_capita", "type": "quantitative", "format": "$,", "title": "GDP Per Capita"},
             {"field": "child_mortality", "type": "quantitative", "format": ",", "title": "Child Mortality"},
             {"field": "child_mortality_rate", "type": "quantitative", "format": ".2f", "title": "Child Mortality Rate Per 1,000 Live Births"}
@@ -151,7 +151,7 @@
           "tooltip": [
             {"field": "country", "type": "nominal", "title": "Country"},
             {"field": "continent", "type": "nominal", "title": "Continent"},
-            {"field": "population", "type": "quantitative", "title": "Population"},
+            {"field": "population", "type": "quantitative", "title": "Population", "format": ","},
             {"field": "gdp_per_capita", "type": "quantitative", "format": "$,", "title": "GDP Per Capita"},
             {"field": "child_mortality", "type": "quantitative", "format": ",", "title": "Child Mortality"},
             {"field": "child_mortality_rate", "type": "quantitative", "format": ".2f", "title": "Child Mortality Rate Per 1,000 Live Births"}

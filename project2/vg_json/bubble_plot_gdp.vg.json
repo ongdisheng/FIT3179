@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 800,
-  "height": 600,
-  "title": "Child mortality rate vs GDP per capita",
+  "width": 1050,
+  "height": 550,
+  "title": "Child Mortality Rate vs GDP Per Capita, 1990 - 2016",
   "data": {
     "url": "https://raw.githubusercontent.com/ongdisheng/FIT3179/main/project2/data/bubble_plot_gdp.csv"
   },
@@ -28,38 +28,12 @@
         "step": 1000000,
         "name": "Minimum Population: "
       }
-    },
-    {
-      "name": "Continent_selection",
-      "bind": {
-        "input": "select",
-        "options": [
-          null,
-          "North America",
-          "South America",
-          "Europe",
-          "Africa",
-          "Asia",
-          "Oceania"
-        ],
-        "labels":[
-          "Show All",
-          "North America",
-          "South America",
-          "Europe",
-          "Africa",
-          "Asia",
-          "Oceania"
-        ],
-        "name": "Continent Selection: "
-      }
     }
   ],
   "transform": [
     {"filter": "datum.gdp_per_capita > 0"},
     {"filter": "datum.child_mortality_rate > 0"},
     {"filter": "datum.population > Population_Above"},
-    {"filter": "Continent_selection == null || datum.continent == Continent_selection"},
     {"filter": "datum.year == Year"}
   ],
   "layer": [
@@ -69,11 +43,11 @@
       ],
       "mark": {
         "type": "text",
-        "fontSize": 100,
-        "x": 420,
-        "y": 300,
+        "fontSize": 80,
+        "x": 945,
+        "y": 60,
         "opacity": 0.05,
-        "color": "lightgray"
+        "color": "#cccccc"
       },
       "encoding": {"text": {"field": "year"}}
     },
@@ -82,27 +56,27 @@
         "x": {
           "field": "gdp_per_capita",
           "type": "quantitative",
-          "title": "GDP per capita ($)",
-          "axis": {"tickCount": 3},
+          "title": "GDP Per Capita ($)",
+          "axis": {"tickCount": 3, "labelFontSize": 13, "titleFontSize": 16},
           "scale": {"type": "log", "domain": [200, 200000]}
         },
         "y": {
           "field": "child_mortality_rate",
           "type": "quantitative",
-          "title": "Child mortality rate",
-          "axis": {"tickCount": 3},
+          "title": "Child Mortality Rate",
+          "axis": {"tickCount": 3, "labelFontSize": 13, "titleFontSize": 16},
           "scale": {"type": "log", "domain": [0.1, 100]}
         }
       },
       "layer": [
         {
-          "selection": {
-            "continent_highlight": {
-              "type": "multi",
-              "fields": ["continent"],
+          "params": [
+            {
+              "name": "continent_highlight",
+              "select": {"type": "point", "fields": ["continent"]},
               "bind": "legend"
             }
-          },
+          ],
           "mark": "circle",
           "encoding": {
             "size": {
@@ -110,8 +84,8 @@
               "type": "quantitative",
               "scale": {
                 "type": "threshold",
-                "domain": [1000000, 10000000, 50000000, 100000000, 500000000],
-                "range": [10, 50, 150, 200, 300, 400]
+                "domain": [10000000, 100000000, 300000000, 700000000, 800000000],
+                "range": [200, 400, 800, 1200, 1600, 2500]
               },
               "legend": {
                   "format": ".1s",
@@ -125,66 +99,97 @@
                   "title": "Continent"
               },
               "scale": {
-                "domain": [
-                  "North America",
-                  "South America",
-                  "Europe",
-                  "Africa",
-                  "Asia",
-                  "Oceania"
-                ],
-                "range": [
-                  "#e41a1c",
-                  "#984ea3",
-                  "#ff7f00",
-                  "#a6cee3",
-                  "#377eb8",
-                  "#a65628"
-                ]
+                "domain": ["North America", "South America", "Europe", "Africa", "Asia", "Oceania"],
+                "range": ["#76b7b2", "#f28e2b", "#4e79a7", "#9c755f", "#e15759", "#edc948"]
               }
             },
             "opacity": {
-              "condition": {"selection": "continent_highlight", "value": 0.6},
-              "value": 0.2
+              "condition": {"selection": "continent_highlight", "value": 0.8},
+              "value": 0.1
             },
             "tooltip": [
               {"field": "country", "type": "nominal", "title": "Country"},
-              {"field": "population", "type": "quantitative", "title": "Population"},
+              {"field": "continent", "type": "nominal", "title": "Continent"},
+              {"field": "population", "type": "quantitative", "title": "Population", "format": ","},
               {"field": "gdp_per_capita", "type": "quantitative", "format": "$,", "title": "GDP Per Capita"},
-              {"field": "child_mortality", "type": "quantitative", "format": ",", "title": "Number Of Child Deaths"},
+              {"field": "child_mortality", "type": "quantitative", "format": ",", "title": "Child Deaths"},
               {"field": "child_mortality_rate", "type": "quantitative", "format": ".2f", "title": "Child Mortality Rate Per 1,000 Live Births"}
             ]
           }
         },
         {
-          "mark": {
-            "type": "text",
-            "align": "right",
-            "baseline": "middle",
-            "dx": -12,
-            "fontSize": 11.5,
-            "fontStyle": "italic"
-          },
+          "transform": [
+            {
+              "filter": {
+                "field": "country",
+                "oneOf": [
+                  "China",
+                  "United States",
+                  "Pakistan",
+                  "Nigeria",
+                  "Japan",
+                  "Malaysia"
+                ]
+              }
+            }
+          ],
+          "mark": {"type": "text", "dy": 15, "fontWeight": "bold"},
           "encoding": {
             "text": {"field": "country", "type": "nominal"},
             "color": {"value": "black"},
             "opacity": {
-              "condition": {
-                "test": "datum['country'] == 'China' || datum['country'] == 'Singapore' || datum['country'] == 'Australia' || datum['country'] == 'New Zealand' || datum['country'] == 'Italy' || datum['country'] == 'Yemen' ||  datum['country'] == 'United States'",
-                "value": 1
-              },
-              "value": 0
+              "condition": {"param": "continent_highlight", "value": 1}, "value": 0.1
             },
             "tooltip": [
               {"field": "country", "type": "nominal", "title": "Country"},
-              {"field": "population", "type": "quantitative", "title": "Population"},
+              {"field": "continent", "type": "nominal", "title": "Continent"},
+              {"field": "population", "type": "quantitative", "title": "Population", "format": ","},
               {"field": "gdp_per_capita", "type": "quantitative", "format": "$,", "title": "GDP Per Capita"},
-              {"field": "child_mortality", "type": "quantitative", "format": ",", "title": "Number Of Child Deaths"},
-              {"field": "child_mortality_rate", "type": "quantitative", "format": ".2f", "title": "Child Mortality Rate"}
+              {"field": "child_mortality", "type": "quantitative", "format": ",", "title": "Child Deaths"},
+              {"field": "child_mortality_rate", "type": "quantitative", "format": ".2f", "title": "Child Mortality Rate Per 1,000 Live Births"}
             ]
+          }
+        },
+        {
+          "transform": [
+            {"filter": "datum.country == 'Luxembourg'"},
+            {
+              "calculate": "'Most European countries lb are wealthy and have high lb economic production'",
+              "as": "text_annotation"
+            }
+          ],
+          "mark": {"type": "text", "fontWeight": "bolder", "dx": -235, "dy": 5},
+          "encoding": {
+            "text": {"field": "text_annotation"},
+            "color": {"value": "#4e79a7"},
+            "size": {"value": 18}
           }
         }
       ]
     }
-  ]
+  ],
+  "config": {
+    "axis": {
+      "labelColor": "black",
+      "titleColor": "black",
+      "gridColor": "lighter"
+    },
+    "autosize": {"type": "pad"},
+    "lineBreak": "lb",
+    "title": {
+      "fontSize": 20,
+      "padding": {"left": 5, "top": 0, "right": 5, "bottom": 5}
+    },
+    "padding": {"left": 5, "top": 0, "right": 5, "bottom": 5},
+    "style": {
+      "guide-title": {"font": "Source Sans Pro, sans-serif", "fontSize": 15},
+      "text": {
+        "font": "Source Sans Pro, sans-serif",
+        "fontWeight": "normal",
+        "size": 14
+      }
+    },
+    "legend": {"columns": 1, "labelLimit": 300},
+    "background": "#ffede8"
+  }
 }

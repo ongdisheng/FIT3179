@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Top Countries with Lowest Child Mortality Rate",
-    "width": 300,
-    "height": 400,
+    "width": 625,
+    "height": 500,
+    "title": "Top Performing Countries",
     "data": {
       "url": "https://raw.githubusercontent.com/ongdisheng/FIT3179/main/project2/data/bar_chart.csv"
     },
@@ -31,7 +31,7 @@
           "x": {
             "field": "mortality_rate",
             "type": "quantitative",
-            "title": null,
+            "title": "Child Mortality Rate",
             "aggregate": "mean"
           },
           "y": {
@@ -60,7 +60,8 @@
             {
               "field": "mortality_rate",
               "type": "quantitative",
-              "title": "Child Mortality Rate Per 1,000"
+              "title": "Child Mortality Rate Per 1,000 Live Births",
+              "format": ".2f"
             }
           ]
         }
@@ -91,9 +92,15 @@
             ],
             "groupby": ["brush"]
           },
-          {"calculate": "'The selected countries have an average of '", "as": "text_annotation"}
+          {"calculate": "'Average child mortality rate: '", "as": "text_annotation"}
         ],
-        "mark": {"type": "text", "align": "center", "dx": 0, "dy": 240},
+        "mark": {
+          "type": "text",
+          "fontWeight": "normal",
+          "dx": 120,
+          "dy": -270,
+          "fontSize": 16
+        },
         "encoding": {"text": {"field": "text_annotation"}, "color": {"value": "black"}}
       },
       {
@@ -109,9 +116,15 @@
             ],
             "groupby": ["brush"]
           },
-          {"calculate": "round(datum['mean_deaths']) + ' child mortality rate per 1,000 live births.'", "as": "text_annotation"}
+          {"calculate": "format(datum['mean_deaths'], '.2f')", "as": "text_annotation"}
         ],
-        "mark": {"type": "text", "align": "center", "dx": 0, "dy": 255},
+        "mark": {
+          "type": "text",
+          "fontWeight": "bold",
+          "dx": 250,
+          "dy": -270,
+          "fontSize": 20
+        },
         "encoding": {"text": {"field": "text_annotation"}, "color": {"value": "black"}}
       }, 
       {
@@ -132,5 +145,31 @@
           "color": {"value": "white"}
         }
       }
-    ]
+    ],
+    "config": {
+      "axis": {
+        "labelFont": "Source Sans Pro, sans-serif",
+        "labelColor": "black",
+        "titleColor": "black",
+        "gridColor": "lighter",
+        "labelFontSize": 14,
+        "labelLimit": 500
+      },
+      "lineBreak": "lb",
+      "title": {
+        "fontSize": 22,
+        "padding": {"left": 5, "top": 5, "right": 5, "bottom": 10}
+      },
+      "padding": {"left": 5, "top": 5, "right": 5, "bottom": 5},
+      "style": {
+        "guide-title": {"font": "Source Sans Pro, sans-serif", "fontSize": 15},
+        "text": {
+          "font": "Source Sans Pro, sans-serif",
+          "fontWeight": "normal",
+          "size": 14
+        },
+        "legend": {"legendFont": "Source Sans Pro, sans-serif"}
+      },
+      "background": "#ffede8"
+    }
   }

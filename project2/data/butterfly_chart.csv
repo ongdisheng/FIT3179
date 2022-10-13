@@ -1,43 +1,11 @@
 ,cause,gender,deaths
-0,Acute hepatitis,boy,5.10513432
-1,Birth defects,boy,328.751521
-2,Diabetes and kidney diseases,boy,4.33205306
-3,Diarrheal diseases,boy,224.854321
-4,Digestive anomalies,boy,32.7034832
-5,Digestive diseases,boy,14.716596
-6,Encephalitis,boy,6.39308692
-7,Birth asphyxia and trauma,boy,482.155557
-8,HIV/AIDS,boy,13.0649271
-9,Heart anomalies,boy,126.310296
-10,Lower respiratory infections,boy,378.117214
-11,Malaria,boy,95.5548593
-12,Measles,boy,14.9746752
-13,Meningitis,boy,51.9064273
-14,Nutritional deficiencies,boy,34.2095558
-15,Preterm birth,boy,561.38
-16,Sudden infant death syndrome,boy,22.3869671
-17,Syphilis,boy,65.135543
-18,Tetanus,boy,12.8134968
-19,Tuberculosis,boy,18.4275344
-20,Whooping cough,boy,33.9766398
-21,Acute hepatitis,girl,4.70618509
-22,Birth defects,girl,279.706415
-23,Diabetes and kidney diseases,girl,3.66084459
-24,Diarrheal diseases,girl,210.605085
-25,Digestive anomalies,girl,30.1586869
-26,Digestive diseases,girl,11.0066375
-27,Encephalitis,girl,6.25731831
-28,Birth asphyxia and trauma,girl,369.203712
-29,HIV/AIDS,girl,13.3706845
-30,Heart anomalies,girl,100.507832
-31,Lower respiratory infections,girl,385.103178
-32,Malaria,girl,113.249155
-33,Measles,girl,14.1588147
-34,Meningitis,girl,43.9915607
-35,Nutritional deficiencies,girl,37.3450204
-36,Preterm birth,girl,437.2
-37,Sudden infant death syndrome,girl,19.4661602
-38,Syphilis,girl,56.6613817
-39,Tetanus,girl,12.1335535
-40,Tuberculosis,girl,20.0052252
-41,Whooping cough,girl,40.1304568
+0,Birth Defects,Boy,328.751521
+1,Diarrheal,Boy,224.854321
+2,Heart Failures,Boy,126.310296
+3,Malaria,Boy,95.5548593
+4,Syphilis,Boy,65.135543
+5,Birth Defects,Girl,279.706415
+6,Diarrheal,Girl,210.605085
+7,Heart Failures,Girl,100.507832
+8,Malaria,Girl,113.249155
+9,Syphilis,Girl,56.6613817
